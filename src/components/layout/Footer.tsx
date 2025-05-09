@@ -63,6 +63,7 @@ export const Footer = () => {
                   <span>Descargar propuesta completa</span>
                 </Button>
               </a>
+              </a>
               <Button variant="outline" size="sm" className="justify-start gap-2 w-fit" onClick={handleShare}>
                 <Share2 className="h-4 w-4" />
                 <span>Compartir</span>

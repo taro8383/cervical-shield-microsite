@@ -6,9 +6,14 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/cervical-shield-microsite/',
   server: {
     host: "::",
     port: 8080,
+  },
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true
   },
   plugins: [
     react(),
