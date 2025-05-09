@@ -20,25 +20,32 @@ export const Header = () => {
   
   return (
     <header className={cn(
-      "fixed top-0 left-0 w-full z-40 transition-all duration-300",
+      "fixed top-0 left-0 w-full z-40 transition-all duration-300 px-4",
       isScrolled 
         ? "bg-background/80 backdrop-blur-lg shadow-sm py-3" 
-        : "bg-transparent py-5"
+        : "bg-transparent py-3 md:py-5"
     )}>
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 bg-primary rounded-md flex items-center justify-center text-primary-foreground font-bold">
-            HPV
-          </div>
-          <div className="font-medium">
-            <span className="hidden md:inline">Programa de Rastrillaje |</span> Corrientes
-          </div>
+          <img 
+            src="/assets/logo.png" 
+            alt="Bioproductos LATAM Logo" 
+            className="h-8 w-auto md:h-12 transition-transform duration-300 hover:scale-105"
+          />
         </div>
         
-        <Button variant="outline" size="sm" className="gap-2">
-          <Download className="h-4 w-4" />
-          <span>Descargar Informe</span>
-        </Button>
+        <a 
+          href="/assets/Propuesta ejecutiva_ Programa de rastrillaje de VPH con kits DH-2 para la provincia de Corrientes.pdf"
+          download
+          className="no-underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline" size="sm" className="gap-2">
+            <Download className="h-4 w-4" />
+            <span>Descargar propuesta completa</span>
+          </Button>
+        </a>
       </div>
     </header>
   );

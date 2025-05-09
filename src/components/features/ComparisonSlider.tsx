@@ -79,7 +79,11 @@ export const ComparisonSlider = ({
           {/* Before image */}
           <div 
             className="absolute top-0 left-0 w-full h-full bg-cover bg-center z-10"
-            style={{ backgroundImage: `url(${beforeImage})` }}
+            style={{ 
+              backgroundImage: `url(${beforeImage})`,
+              opacity: 1 - (sliderPosition / 100),
+              transition: 'opacity 0.3s ease' 
+            }}
           >
             <div className="absolute top-4 left-4 bg-black/60 text-white px-2 py-1 text-sm rounded">
               {beforeLabel}
@@ -91,7 +95,8 @@ export const ComparisonSlider = ({
             className="absolute top-0 left-0 h-full bg-cover bg-center z-20"
             style={{ 
               backgroundImage: `url(${afterImage})`,
-              width: `${sliderPosition}%` 
+              width: `${sliderPosition}%`,
+              transition: 'width 0.3s ease' 
             }}
           >
             <div className="absolute top-4 right-4 bg-primary/80 text-white px-2 py-1 text-sm rounded">

@@ -98,7 +98,7 @@ const Index = () => {
   const incidenceData = [
     { year: '2016', casos: 91, porcentaje: 46.67 },
     { year: '2017', casos: 87, porcentaje: 54.7 },
-    { year: '2018 (S1)', casos: 38, porcentaje: 43 },
+    { year: '2018', casos: 89, porcentaje: 43 },
     { year: '2019 (est)', casos: 95, porcentaje: 50 },
     { year: '2020 (est)', casos: 100, porcentaje: 52 },
     { year: '2021 (est)', casos: 105, porcentaje: 53 },
@@ -125,13 +125,13 @@ const Index = () => {
       id: 1,
       title: 'Desarrollo del programa',
       description: 'Diseño de protocolos y procesos para implementación eficiente.',
-      completed: true
+      completed: false
     },
     {
       id: 2,
       title: 'Adquisición de kits DH-2',
       description: 'Negociación con proveedores y proceso de compra.',
-      completed: true
+      completed: false
     },
     {
       id: 3,
@@ -175,21 +175,21 @@ const Index = () => {
   const timelineEvents: TimelineEvent[] = [
     {
       id: 1,
-      year: '2022',
+      year: '2025',
       title: 'Análisis epidemiológico',
       description: 'Evaluación de la situación actual del cáncer de cuello uterino en Corrientes.',
       type: 'milestone'
     },
     {
       id: 2,
-      year: '2023',
+      year: '2025',
       title: 'Desarrollo del programa',
       description: 'Diseño del programa de rastrillaje con kits DH-2.',
       type: 'regular'
     },
     {
       id: 3,
-      year: '2024',
+      year: '2025',
       title: 'Implementación piloto',
       description: 'Prueba piloto en centros de salud seleccionados.',
       type: 'milestone'
@@ -223,20 +223,28 @@ const Index = () => {
       <Header />
       
       {/* Hero */}
-      <section className="min-h-[70vh] bg-gradient-to-br from-health-100 to-health-200 pt-32 pb-16 flex items-center">
-        <div className="container">
+      <section className="min-h-[50vh] md:min-h-[70vh] bg-[url('/assets/hero.jpeg')] bg-cover bg-center pt-24 pb-12 md:pt-32 md:pb-16 flex items-center relative before:absolute before:inset-0 before:bg-gradient-to-br before:from-black/50 before:to-black/30 before:content-['']">
+        <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-black [text-shadow:_1px_1px_2px_rgba(14,117,135,0.8)]">
               Programa de Rastrillaje de VPH con Kits DH-2
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            <p className="text-xl md:text-2xl text-black/90 mb-8 [text-shadow:_0_1px_1px_rgba(14,117,135,0.6)]">
               Propuesta ejecutiva para la provincia de Corrientes
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2">
-                <Download className="h-5 w-5" />
-                Descargar informe completo
-              </Button>
+            <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row justify-center relative z-10">
+              <a 
+                href="/assets/Propuesta ejecutiva_ Programa de rastrillaje de VPH con kits DH-2 para la provincia de Corrientes.pdf"
+                download 
+                className="no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="gap-2">
+                  <Download className="h-5 w-5" />
+                  Descargar propuesta completa
+                </Button>
+              </a>
               <Button variant="outline" size="lg" onClick={() => {
                 contentSectionsRef.current?.scrollIntoView({ behavior: 'smooth' });
               }}>
@@ -253,14 +261,7 @@ const Index = () => {
           {/* Sidebar with TOC */}
           <div className="lg:col-span-3">
             <div className="lg:sticky lg:top-20">
-              <TableOfContents sections={tableOfContentsSections} />
-              
-              <div className="mt-8">
-                <FilterableTags 
-                  tags={filterTags}
-                  onFilterChange={handleFilterChange}
-                />
-              </div>
+              <TableOfContents sections={tableOfContentsSections} defaultCollapsed={true} />
               
               <div className="mt-8">
                 <QuickFactsPanel 
@@ -288,27 +289,27 @@ const Index = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 mb-8">
-                <StatCard 
-                  title="Detección temprana"
-                  value="70%"
-                  description="De lesiones precancerosas identificadas"
-                  icon={<ChartBar className="h-4 w-4" />}
-                  color="bg-health-100"
-                />
-                <StatCard 
-                  title="Precisión diagnóstica"
-                  value="99.9%"
-                  description="Especificidad de los kits DH-2"
-                  icon={<ChartBar className="h-4 w-4" />}
-                  color="bg-health-200"
-                />
-                <StatCard 
-                  title="Cobertura ampliada"
-                  value="100%"
-                  description="Acceso a poblaciones objetivo"
-                  icon={<Map className="h-4 w-4" />}
-                  color="bg-health-100"
-                />
+                    <StatCard 
+                      title="Detección temprana"
+                      value="70%"
+                      description="De lesiones precancerosas identificadas"
+                      icon={<ChartBar className="h-4 w-4" />}
+                      color="bg-[#43B5A4]"
+                    />
+                    <StatCard 
+                      title="Precisión diagnóstica"
+                      value="99.9%"
+                      description="Especificidad de los kits DH-2"
+                      icon={<ChartBar className="h-4 w-4" />}
+                      color="bg-[#0e7587]"
+                    />
+                    <StatCard 
+                      title="Cobertura ampliada"
+                      value="100%"
+                      description="Acceso a poblaciones objetivo"
+                      icon={<Map className="h-4 w-4" />}
+                      color="bg-[#164587]"
+                    />
               </div>
               
               <Accordion type="single" collapsible className="w-full">
@@ -357,7 +358,7 @@ const Index = () => {
                     data={comparativeData}
                     chartTypes={['bar', 'line']}
                     xKey="provincia"
-                    yKeys={[{ key: 'tasa', name: 'Tasa de mortalidad', color: '#8B5CF6' }]}
+                    yKeys={[{ key: 'tasa', name: 'Tasa de mortalidad', color: '#164587' }]}
                   />
                 </div>
                 
@@ -508,11 +509,11 @@ const Index = () => {
                     title="Incidencia Histórica de Casos"
                     description="Hospital Dr. José R. Vidal, Corrientes"
                     data={incidenceData}
-                    chartTypes={['bar', 'line', 'pie']}
+                    chartTypes={['bar', 'line']}
                     xKey="year"
                     yKeys={[
-                      { key: 'casos', name: 'Casos anuales', color: '#8B5CF6' },
-                      { key: 'porcentaje', name: 'Porcentaje de cánceres femeninos', color: '#0EA5E9' }
+                      { key: 'casos', name: 'Casos anuales', color: '#0e7587' },
+                      { key: 'porcentaje', name: 'Porcentaje de cánceres femeninos', color: '#b5b1b2' }
                     ]}
                   />
                 </div>
@@ -561,9 +562,9 @@ const Index = () => {
                   </ul>
                 </div>
                 
-                <ComparisonSlider 
-                  beforeImage="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" 
-                  afterImage="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                <ComparisonSlider
+                  beforeImage="/assets/sinprograma.png"
+                  afterImage="/assets/conprograma.png"
                   beforeLabel="Sin programa de rastrillaje"
                   afterLabel="Con programa implementado"
                 />
@@ -701,45 +702,45 @@ const Index = () => {
               <div className="mb-8">
                 <h3 className="text-2xl font-medium mb-4">Comparativa tecnológica</h3>
                 
-                <div className="overflow-x-auto mb-6">
-                  <table className="w-full border-collapse">
-                    <thead>
-                      <tr className="bg-muted">
-                        <th className="p-3 text-left border">Característica</th>
-                        <th className="p-3 text-left border">Dalton DH-2</th>
-                        <th className="p-3 text-left border">Roche (PCR)</th>
-                        <th className="p-3 text-left border">Abbott (CMIA)</th>
-                        <th className="p-3 text-left border">Qiagen HC-2</th>
+              <div className="overflow-x-auto mb-6 rounded-lg border border-border">
+                  <table className="w-full min-w-[700px]">
+                    <thead className="bg-muted">
+                      <tr>
+                        <th className="p-4 text-left font-medium">Característica</th>
+                        <th className="p-4 text-left font-medium">Dalton DH-2</th>
+                        <th className="p-4 text-left font-medium">Roche (PCR)</th>
+                        <th className="p-4 text-left font-medium">Abbott (CMIA)</th>
+                        <th className="p-4 text-left font-medium">Qiagen HC-2</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td className="p-3 border">Sensibilidad</td>
-                        <td className="p-3 border">Alta (98%)</td>
-                        <td className="p-3 border">95%</td>
-                        <td className="p-3 border">90%</td>
-                        <td className="p-3 border">92%</td>
+                    <tbody className="divide-y divide-border">
+                      <tr className="hover:bg-muted/50 transition-colors">
+                        <td className="p-4">Sensibilidad</td>
+                        <td className="p-4 font-medium text-[#43B5A4]">98%</td>
+                        <td className="p-4">95%</td>
+                        <td className="p-4">90%</td>
+                        <td className="p-4">92%</td>
                       </tr>
-                      <tr>
-                        <td className="p-3 border">Especificidad</td>
-                        <td className="p-3 border">&gt;99.9%</td>
-                        <td className="p-3 border">98%</td>
-                        <td className="p-3 border">97%</td>
-                        <td className="p-3 border">99%</td>
+                      <tr className="hover:bg-muted/50 transition-colors">
+                        <td className="p-4">Especificidad</td>
+                        <td className="p-4 font-medium text-[#43B5A4]">{">"}99.9%</td>
+                        <td className="p-4">98%</td>
+                        <td className="p-4">97%</td>
+                        <td className="p-4">99%</td>
                       </tr>
-                      <tr>
-                        <td className="p-3 border">Costo</td>
-                        <td className="p-3 border">Bajo</td>
-                        <td className="p-3 border">Alto</td>
-                        <td className="p-3 border">Medio</td>
-                        <td className="p-3 border">Medio-Alto</td>
+                      <tr className="hover:bg-muted/50 transition-colors">
+                        <td className="p-4">Costo</td>
+                        <td className="p-4 font-medium text-[#43B5A4]">Bajo</td>
+                        <td className="p-4">Alto</td>
+                        <td className="p-4">Medio</td>
+                        <td className="p-4">Medio-Alto</td>
                       </tr>
-                      <tr>
-                        <td className="p-3 border">Facilidad de Uso</td>
-                        <td className="p-3 border">✅ Alta (sin extracción de ADN)</td>
-                        <td className="p-3 border">❌ Requiere laboratorio especializado</td>
-                        <td className="p-3 border">⚠️ Riesgo de falsos positivos</td>
-                        <td className="p-3 border">⚠️ Infraestructura compleja</td>
+                      <tr className="hover:bg-muted/50 transition-colors">
+                        <td className="p-4">Facilidad de Uso</td>
+                        <td className="p-4 font-medium text-[#43B5A4]">✅ Alta (sin extracción de ADN)</td>
+                        <td className="p-4">❌ Requiere laboratorio especializado</td>
+                        <td className="p-4">⚠️ Riesgo de falsos positivos</td>
+                        <td className="p-4">⚠️ Infraestructura compleja</td>
                       </tr>
                     </tbody>
                   </table>
@@ -749,12 +750,12 @@ const Index = () => {
                   title="Comparación de Kits de Detección"
                   description="Análisis de factores clave por fabricante"
                   data={kitComparisonData}
-                  chartTypes={['bar', 'pie']}
+                  chartTypes={['bar']}
                   xKey="kit"
-                  yKeys={[
-                    { key: 'sensibilidad', name: 'Sensibilidad (%)', color: '#8B5CF6' },
-                    { key: 'especificidad', name: 'Especificidad (%)', color: '#0EA5E9' },
-                    { key: 'facilidad', name: 'Facilidad de uso', color: '#22C55E' }
+                    yKeys={[
+                    { key: 'sensibilidad', name: 'Sensibilidad', color: '#43B5A4' },
+                    { key: 'especificidad', name: 'Especificidad', color: '#0e7587' },
+                    { key: 'facilidad', name: 'Facilidad', color: '#B5B1B2' }
                   ]}
                 />
               </div>
@@ -875,7 +876,7 @@ const Index = () => {
                   title="Vidas salvadas"
                   value="87+"
                   description="Casos evitables anualmente"
-                  color="bg-primary/20"
+                  color="bg-[#43B5A4]"
                 />
                 <StatCard 
                   title="Detección temprana"
@@ -892,10 +893,18 @@ const Index = () => {
               </div>
               
               <div className="flex justify-center mt-10">
-                <Button size="lg" className="gap-2">
+                <a 
+                  href="/assets/Propuesta ejecutiva_ Programa de rastrillaje de VPH con kits DH-2 para la provincia de Corrientes.pdf"
+                  download
+                  className="no-underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" className="gap-2">
                   <Download className="h-5 w-5" />
                   Descargar propuesta completa
-                </Button>
+                  </Button>
+                </a>
               </div>
             </section>
           </div>

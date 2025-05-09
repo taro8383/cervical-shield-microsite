@@ -38,13 +38,12 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="font-medium">Contacto</div>
             <address className="text-muted-foreground text-sm not-italic">
-              Ministerio de Salud de la provincia<br />
-              Corrientes, Argentina
+              Bioproductos LATAM
             </address>
             <div className="flex items-center gap-2 text-sm">
               <Mail className="h-4 w-4" />
-              <a href="mailto:info@saludcorrientes.gob.ar" className="text-primary hover:underline">
-                info@saludcorrientes.gob.ar
+              <a href="mailto:info@bioproductos-latam.com" className="text-primary hover:underline">
+                info@bioproductos-latam.com
               </a>
             </div>
           </div>
@@ -52,10 +51,18 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="font-medium">Recursos</div>
             <div className="flex flex-col gap-2">
-              <Button variant="outline" size="sm" className="justify-start gap-2 w-fit">
-                <Download className="h-4 w-4" />
-                <span>Descargar Informe</span>
-              </Button>
+              <a 
+                href="/assets/Propuesta ejecutiva_ Programa de rastrillaje de VPH con kits DH-2 para la provincia de Corrientes.pdf"
+                download
+                className="no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="justify-start gap-2 w-fit">
+                  <Download className="h-4 w-4" />
+                  <span>Descargar propuesta completa</span>
+                </Button>
+              </a>
               <Button variant="outline" size="sm" className="justify-start gap-2 w-fit" onClick={handleShare}>
                 <Share2 className="h-4 w-4" />
                 <span>Compartir</span>
@@ -66,7 +73,7 @@ export const Footer = () => {
         
         <div className="border-t border-border mt-8 pt-6 text-sm text-muted-foreground flex flex-col md:flex-row justify-between gap-4">
           <div>
-            © {currentYear} Programa de Rastrillaje de VPH - Corrientes
+            © {currentYear} Bioproductos LATAM
           </div>
           <div>
             <a href="#" className="hover:text-primary transition-colors">Política de privacidad</a>

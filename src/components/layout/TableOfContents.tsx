@@ -14,11 +14,12 @@ interface Section {
 
 interface TableOfContentsProps {
   sections: Section[];
+  defaultCollapsed?: boolean;
 }
 
-export const TableOfContents = ({ sections }: TableOfContentsProps) => {
+export const TableOfContents = ({ sections, defaultCollapsed = false }: TableOfContentsProps) => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
   
   // Track scroll position to update active section
   useEffect(() => {
