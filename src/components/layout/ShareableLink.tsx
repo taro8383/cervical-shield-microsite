@@ -1,13 +1,13 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/toast';
+import { toast } from '@/components/ui/sonner';
 import { Link, Share2 } from 'lucide-react';
 
 interface ShareableLinkProps {
   url: string;
   title?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'default' | 'lg';
   variant?: 'default' | 'outline' | 'ghost';
   className?: string;
 }
@@ -20,7 +20,6 @@ export const ShareableLink = ({
   className 
 }: ShareableLinkProps) => {
   const [isSharing, setIsSharing] = useState(false);
-  const { toast } = useToast();
   
   const handleShare = async () => {
     setIsSharing(true);

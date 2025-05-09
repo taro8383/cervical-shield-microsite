@@ -2,7 +2,7 @@
 import { Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-import { useToast } from '@/components/ui/toast';
+import { toast } from '@/components/ui/sonner';
 
 interface SectionPermalinkProps {
   sectionId: string;
@@ -11,7 +11,6 @@ interface SectionPermalinkProps {
 
 export const SectionPermalink = ({ sectionId, className }: SectionPermalinkProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
-  const { toast } = useToast();
   
   const handleShare = async () => {
     const url = `${window.location.origin}${window.location.pathname}#${sectionId}`;

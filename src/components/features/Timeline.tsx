@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { Clock } from 'lucide-react';
 
-interface TimelineEvent {
+export interface TimelineEvent {
   id: number;
   year: string;
   title: string;

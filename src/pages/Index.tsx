@@ -10,7 +10,7 @@ import { ComparisonSlider } from '@/components/features/ComparisonSlider';
 import { ProgressTracker } from '@/components/features/ProgressTracker';
 import { QuickFactsPanel } from '@/components/features/QuickFactsPanel';
 import { FilterableTags } from '@/components/features/FilterableTags';
-import { Timeline } from '@/components/features/Timeline';
+import { Timeline, TimelineEvent } from '@/components/features/Timeline';
 import { SectionPermalink } from '@/components/features/SectionPermalink';
 import {
   Accordion,
