@@ -23,9 +23,8 @@ export const SectionPermalink = ({ sectionId, className }: SectionPermalinkProps
         });
       } else {
         await navigator.clipboard.writeText(url);
-        toast({
-          title: "Enlace copiado",
-          description: "El enlace permanente ha sido copiado al portapapeles",
+        toast("Enlace copiado", {
+          description: "El enlace permanente ha sido copiado al portapapeles"
         });
         
         // Animation feedback

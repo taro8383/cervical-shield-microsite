@@ -31,9 +31,8 @@ export const ShareableLink = ({
         });
       } else {
         await navigator.clipboard.writeText(url);
-        toast({
-          title: "Enlace copiado",
-          description: "El enlace ha sido copiado al portapapeles",
+        toast("Enlace copiado", {
+          description: "El enlace ha sido copiado al portapapeles"
         });
       }
     } catch (error) {

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -173,7 +172,7 @@ const Index = () => {
     }
   ];
 
-  const timelineEvents = [
+  const timelineEvents: TimelineEvent[] = [
     {
       id: 1,
       year: '2022',
