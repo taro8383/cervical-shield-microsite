@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Progress, ChartBar, Calendar, Map, Filter, Tags } from 'lucide-react';
+import { Download, ChartBar, Calendar, Map, Filter, Tags } from 'lucide-react';
 
 const Index = () => {
   const [activeTags, setActiveTags] = useState<string[]>([]);
@@ -292,7 +292,7 @@ const Index = () => {
                   title="Detección temprana"
                   value="70%"
                   description="De lesiones precancerosas identificadas"
-                  icon={<Progress className="h-4 w-4" />}
+                  icon={<ChartBar className="h-4 w-4" />}
                   color="bg-health-100"
                 />
                 <StatCard 
@@ -331,7 +331,7 @@ const Index = () => {
                   <AccordionContent>
                     <p>Los kits DH-2 destacan por:</p>
                     <ul className="list-disc pl-6 mt-2 space-y-1">
-                      <li>Alta sensibilidad (98%) y especificidad (>99.9%).</li>
+                      <li>Alta sensibilidad (98%) y especificidad (&gt;99.9%).</li>
                       <li>No requieren extracción ni amplificación de ADN, simplificando el proceso.</li>
                       <li>Adaptabilidad a entornos con infraestructura limitada.</li>
                     </ul>
@@ -753,258 +753,4 @@ const Index = () => {
                   xKey="kit"
                   yKeys={[
                     { key: 'sensibilidad', name: 'Sensibilidad (%)', color: '#8B5CF6' },
-                    { key: 'especificidad', name: 'Especificidad (%)', color: '#0EA5E9' },
-                    { key: 'facilidad', name: 'Facilidad de uso', color: '#22C55E' }
-                  ]}
-                  className="mb-6"
-                />
-              </div>
-              
-              <div className="mb-6">
-                <h3 className="text-2xl font-medium mb-4">Ventajas clave</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="border rounded-lg p-5 hover:shadow-md transition-shadow hover-scale">
-                    <h4 className="font-medium mb-2">Detección diferenciada</h4>
-                    <p className="text-sm text-muted-foreground">
-                      De los tipos 16 y 18 (más comunes) y otros 12 tipos de alto riesgo en conjunto,
-                      responsables de aproximadamente el 70% de los casos de cáncer de cuello uterino mundialmente.
-                    </p>
-                  </div>
-                  
-                  <div className="border rounded-lg p-5 hover:shadow-md transition-shadow hover-scale">
-                    <h4 className="font-medium mb-2">Tecnología avanzada</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Método de captura híbrida con quimioluminiscencia (Hybrid Capture-CLIA) 
-                      sin necesidad de extracción ni amplificación de ácido nucleico.
-                    </p>
-                  </div>
-                  
-                  <div className="border rounded-lg p-5 hover:shadow-md transition-shadow hover-scale">
-                    <h4 className="font-medium mb-2">Alta precisión</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Uso de 14 sondas de ARN para evitar falsos negativos asociados a la falta 
-                      de la región L1 del VPH. Valor predictivo negativo &gt; 99.9%.
-                    </p>
-                  </div>
-                  
-                  <div className="border rounded-lg p-5 hover:shadow-md transition-shadow hover-scale">
-                    <h4 className="font-medium mb-2">Presentación y almacenamiento</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Disponible en 48 o 96 pruebas por caja. Validez de 12 meses a 2–8 °C (evitar congelación).
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            {/* Demografía y Acceso */}
-            <section id="demografia" className="mb-16 section-reveal">
-              <div className="flex justify-between items-center section-heading">
-                <h2>Demografía y Acceso a Salud</h2>
-                <SectionPermalink sectionId="demografia" />
-              </div>
-              
-              <div id="analisis-demografico" className="mb-8">
-                <h3 className="text-2xl font-medium mb-4">Análisis demográfico y acceso a la salud en Corrientes</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <StatCard 
-                    title="Población Total"
-                    value="1,212,696"
-                    description="Habitantes de Corrientes (Censo 2022)"
-                    icon={<ChartBar className="h-4 w-4" />}
-                    color="bg-health-200"
-                  />
-                  <StatCard 
-                    title="Población Femenina"
-                    value="623,673"
-                    description="Mujeres en Corrientes (Censo 2022)"
-                    icon={<ChartBar className="h-4 w-4" />}
-                    color="bg-health-100"
-                  />
-                  <StatCard 
-                    title="Población Objetivo"
-                    value="323,160"
-                    description="Estimación de mujeres de 20-59 años"
-                    icon={<Filter className="h-4 w-4" />}
-                    color="bg-health-200"
-                  />
-                </div>
-                
-                <h4 className="text-xl font-medium mb-2">Distribución de la población urbana y rural</h4>
-                <p className="mb-4">
-                  La distribución urbana-rural afecta la logística del programa. Según el censo de 2010:
-                </p>
-                <ul className="list-disc pl-6 mb-6 space-y-1">
-                  <li><strong>Población urbana:</strong> 822,224 habitantes (82.8%).</li>
-                  <li><strong>Población rural:</strong> 170,371 habitantes (17.2%):
-                    <ul className="list-disc pl-6 mt-1">
-                      <li>Rural agrupada: 35,770 personas.</li>
-                      <li>Rural dispersa: 134,601 personas.</li>
-                    </ul>
-                  </li>
-                </ul>
-                
-                <h4 className="text-xl font-medium mb-2">Cobertura actual de citología</h4>
-                <p className="mb-4">
-                  La evaluación de la cobertura existente es vital para identificar brechas:
-                </p>
-                <ul className="list-disc pl-6 mb-4 space-y-2">
-                  <li>
-                    <strong>Encuesta Nacional de Factores de Riesgo (2005):</strong>
-                    <ul className="list-disc pl-6 mt-1">
-                      <li>53% de mujeres de 35–64 años en el Noreste realizó Papanicolaou en los últimos 2 años.</li>
-                      <li>En Corrientes, solo 25% de mujeres sin obra social o seguro privado accedió a la prueba.</li>
-                    </ul>
-                  </li>
-                  <li><strong>Cobertura nacional (2018):</strong> 70.3% en promedio, aunque regionalmente podría variar.</li>
-                </ul>
-              </div>
-              
-              <div id="incidencia" className="mb-8">
-                <h3 className="text-2xl font-medium mb-4">Incidencia histórica y proyección de impacto</h3>
-                
-                <h4 className="text-xl font-medium mb-2">Casos anuales de cáncer cervical</h4>
-                <ul className="list-disc pl-6 mb-6 space-y-1">
-                  <li>A nivel nacional, se diagnostican ~4,000 nuevos casos de cáncer cervical al año en Argentina.</li>
-                  <li>
-                    <strong>Datos del Hospital "Dr. José R. Vidal" (Corrientes)</strong>:
-                    <ul className="list-disc pl-6 mt-1">
-                      <li>2016: 91 casos (46.67% de cánceres femeninos).</li>
-                      <li>2017: 87 casos (54.70% de cánceres femeninos).</li>
-                      <li>Primer semestre de 2018: 38 casos (43% de cánceres femeninos).</li>
-                    </ul>
-                  </li>
-                  <li>Estudios sugieren que entre 70 y 90 mujeres fallecen anualmente en Corrientes por VPH.</li>
-                </ul>
-                
-                <h4 className="text-xl font-medium mb-2">Proyección de casos evitables</h4>
-                <ul className="list-disc pl-6 mb-6 space-y-1">
-                  <li>Un programa de rastrillaje masivo de VPH podría detectar el 70% de lesiones precancerosas, reduciendo la incidencia futura.</li>
-                  <li>Basado en la estimación de 125 casos anuales: 87.5 casos evitables/año mediante detección temprana.</li>
-                  <li>
-                    Impacto real depende de:
-                    <ul className="list-disc pl-6 mt-1">
-                      <li>Cobertura del programa.</li>
-                      <li>Eficacia en el tratamiento de lesiones.</li>
-                    </ul>
-                  </li>
-                  <li>La progresión de lesiones a cáncer invasivo puede tomar 10–20 años, por lo que los resultados serán visibles a largo plazo.</li>
-                </ul>
-              </div>
-              
-              <div id="recomendaciones" className="mb-8">
-                <h3 className="text-2xl font-medium mb-4">Recomendaciones técnicas</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                  <div>
-                    <h4 className="text-xl font-medium mb-3">Áreas urbanas</h4>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-primary pl-4 py-2">
-                        <h5 className="font-medium">Metodología de prueba de VPH</h5>
-                        <p className="text-sm text-muted-foreground">Kit DH-2 con método de hibridación por captura con quimioluminiscencia.</p>
-                      </div>
-                      <div className="border-l-4 border-primary pl-4 py-2">
-                        <h5 className="font-medium">Recolección de muestras</h5>
-                        <p className="text-sm text-muted-foreground">Utilizar células exfoliadas del cuello uterino siguiendo las instrucciones del fabricante.</p>
-                      </div>
-                      <div className="border-l-4 border-primary pl-4 py-2">
-                        <h5 className="font-medium">Equipamiento e Infraestructura</h5>
-                        <p className="text-sm text-muted-foreground">Analizador de inmunoensayo por quimioluminiscencia (Dalton CS-SA301C) con integración a sistemas LIS/HIS.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-xl font-medium mb-3">Áreas rurales</h4>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-health-300 pl-4 py-2">
-                        <h5 className="font-medium">Campañas de rastrillaje móvil</h5>
-                        <p className="text-sm text-muted-foreground">Superar barreras geográficas con unidades móviles y espacios privados para la toma de muestras.</p>
-                      </div>
-                      <div className="border-l-4 border-health-300 pl-4 py-2">
-                        <h5 className="font-medium">Promoción de la autotoma</h5>
-                        <p className="text-sm text-muted-foreground">Aumentar la participación con métodos respaldados por la FDA y programas exitosos como ROSE en Malasia.</p>
-                      </div>
-                      <div className="border-l-4 border-health-300 pl-4 py-2">
-                        <h5 className="font-medium">Método autónomo de quimioluminiscencia</h5>
-                        <p className="text-sm text-muted-foreground">Uso del analizador CS-SA301C en unidades móviles con comunicación de resultados mediante tecnología móvil.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <h4 className="text-xl font-medium mb-3">Capacitación técnica y desarrollo de capacidades</h4>
-                <Accordion type="single" collapsible className="w-full mb-8">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>Alianzas con universidades locales</AccordionTrigger>
-                    <AccordionContent>
-                      <p className="mb-2"><strong>Instituciones clave:</strong> Universidad Nacional del Nordeste, Fundación Barceló.</p>
-                      <p className="mb-2"><strong>Roles:</strong></p>
-                      <ul className="list-disc pl-6 space-y-1">
-                        <li>Desarrollo de currículos para capacitación en pruebas de VPH.</li>
-                        <li>Sesiones prácticas para personal de salud.</li>
-                        <li>Formación continua en estándares de calidad y protocolos actualizados.</li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                  
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>Programas de capacitación</AccordionTrigger>
-                    <AccordionContent>
-                      <p className="mb-2">Temas incluidos:</p>
-                      <ul className="list-disc pl-6 space-y-1">
-                        <li>Marco teórico del VPH y cáncer de cuello uterino.</li>
-                        <li>Uso del kit DH-2 y analizador Dalton CS-SA301C.</li>
-                        <li>Control de calidad, bioseguridad y ética en programas de rastrillaje.</li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
-            </section>
-            
-            {/* Conclusiones */}
-            <section id="conclusiones" className="section-reveal">
-              <div className="flex justify-between items-center section-heading">
-                <h2>Conclusiones y Recomendaciones</h2>
-                <SectionPermalink sectionId="conclusiones" />
-              </div>
-              
-              <div className="mb-6">
-                <h3 className="text-2xl font-medium mb-4">Importancia de la prevención y detección temprana</h3>
-                <ul className="list-disc pl-6 mb-4 space-y-2">
-                  <li>El cáncer de cuello uterino es una enfermedad prevenible, y el rastrillaje con VPH supera en sensibilidad a la citología tradicional.</li>
-                  <li>Los kits DH-2 permiten detectar tipos de VPH de alto riesgo específicos y simplifican el proceso de prueba.</li>
-                  <li>La estrategia propuesta (rastrillaje primario con VPH en mujeres de 30 a 64 años, seguido de citología de triage para resultados positivos) se alinea con guías nacionales e internacionales.</li>
-                </ul>
-              </div>
-              
-              <div className="bg-primary/5 p-6 rounded-lg mb-6">
-                <h3 className="text-2xl font-medium mb-4">Llamado a la acción</h3>
-                <p className="text-lg">
-                  Se recomienda al Ministerio de Salud de Corrientes adoptar y financiar el programa propuesto 
-                  para establecer un programa de rastrillaje de VPH integral utilizando los kits DH-2. Esta 
-                  inversión estratégica tendrá un impacto duradero en la reducción de la carga del cáncer de 
-                  cuello uterino y en la mejora de la calidad de vida.
-                </p>
-              </div>
-              
-              <div className="flex justify-center mt-10 mb-6">
-                <Button size="lg" className="gap-2">
-                  <Download className="h-5 w-5" />
-                  Descargar informe completo
-                </Button>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-      
-      <Footer />
-    </>
-  );
-};
-
-export default Index;
+                    { key: 'especificidad', name:
