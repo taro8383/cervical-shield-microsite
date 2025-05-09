@@ -1,0 +1,80 @@
+
+import { Button } from '@/components/ui/button';
+import { Download, Mail, Share2 } from 'lucide-react';
+
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Programa de Rastrillaje de VPH para Corrientes',
+          text: 'Propuesta ejecutiva para el Programa de Rastrillaje de VPH con Kits DH-2 para la Provincia de Corrientes',
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.error('Error compartiendo:', err);
+      }
+    } else {
+      // Fallback for browsers that don't support Web Share API
+      navigator.clipboard.writeText(window.location.href);
+      alert('Enlace copiado al portapapeles');
+    }
+  };
+  
+  return (
+    <footer className="bg-muted py-8 mt-16">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <div className="font-bold text-lg">Programa de Rastrillaje de VPH</div>
+            <p className="text-muted-foreground text-sm">
+              Propuesta ejecutiva para la implementación de un programa de rastrillaje 
+              de VPH con kits DH-2 en la provincia de Corrientes.
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="font-medium">Contacto</div>
+            <address className="text-muted-foreground text-sm not-italic">
+              Ministerio de Salud de la provincia<br />
+              Corrientes, Argentina
+            </address>
+            <div className="flex items-center gap-2 text-sm">
+              <Mail className="h-4 w-4" />
+              <a href="mailto:info@saludcorrientes.gob.ar" className="text-primary hover:underline">
+                info@saludcorrientes.gob.ar
+              </a>
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="font-medium">Recursos</div>
+            <div className="flex flex-col gap-2">
+              <Button variant="outline" size="sm" className="justify-start gap-2 w-fit">
+                <Download className="h-4 w-4" />
+                <span>Descargar Informe</span>
+              </Button>
+              <Button variant="outline" size="sm" className="justify-start gap-2 w-fit" onClick={handleShare}>
+                <Share2 className="h-4 w-4" />
+                <span>Compartir</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t border-border mt-8 pt-6 text-sm text-muted-foreground flex flex-col md:flex-row justify-between gap-4">
+          <div>
+            © {currentYear} Programa de Rastrillaje de VPH - Corrientes
+          </div>
+          <div>
+            <a href="#" className="hover:text-primary transition-colors">Política de privacidad</a>
+            {' | '}
+            <a href="#" className="hover:text-primary transition-colors">Términos de uso</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
