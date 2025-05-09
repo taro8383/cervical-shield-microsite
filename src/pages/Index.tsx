@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -753,4 +754,158 @@ const Index = () => {
                   xKey="kit"
                   yKeys={[
                     { key: 'sensibilidad', name: 'Sensibilidad (%)', color: '#8B5CF6' },
-                    { key: 'especificidad', name:
+                    { key: 'especificidad', name: 'Especificidad (%)', color: '#0EA5E9' },
+                    { key: 'facilidad', name: 'Facilidad de uso', color: '#22C55E' }
+                  ]}
+                />
+              </div>
+              
+              <div className="mb-8">
+                <h3 className="text-2xl font-medium mb-4">Conclusiones y recomendaciones</h3>
+                
+                <p className="mb-4">
+                  Los kits DH-2 ofrecen una solución integral para el rastrillaje de VPH, combinando:
+                </p>
+                
+                <ul className="list-disc pl-6 mb-6 space-y-2">
+                  <li>Alta sensibilidad y especificidad para minimizar falsos resultados</li>
+                  <li>Costo-efectividad para implementación a gran escala</li>
+                  <li>Facilidad de uso que reduce requisitos de infraestructura especializada</li>
+                  <li>Adaptabilidad a diversas condiciones de campo, ideal para Corrientes</li>
+                </ul>
+              </div>
+            </section>
+            
+            {/* Demografía */}
+            <section id="demografia" className="mb-16 section-reveal">
+              <div className="flex justify-between items-center section-heading">
+                <h2>Demografía y Acceso</h2>
+                <SectionPermalink sectionId="demografia" />
+              </div>
+              
+              <p className="mb-6">
+                La planificación estratégica del programa requiere un análisis detallado de la 
+                demografía y acceso a servicios de salud en Corrientes.
+              </p>
+              
+              <div id="analisis-demografico" className="mb-8">
+                <h3 className="text-2xl font-medium mb-4">Análisis demográfico</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                  <div>
+                    <h4 className="text-xl font-medium mb-2">Datos poblacionales</h4>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>Población total: 1,212,696 habitantes</li>
+                      <li>Población femenina: 623,673 mujeres</li>
+                      <li>Población objetivo (30-64 años): ~323,160 mujeres</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xl font-medium mb-2">Distribución urbana-rural</h4>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>Población urbana: 82.8% (datos 2010)</li>
+                      <li>Población rural: 17.2%</li>
+                      <li>Concentración en la capital: 35.4% (428,346 habitantes)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="incidencia" className="mb-8">
+                <h3 className="text-2xl font-medium mb-4">Incidencia histórica</h3>
+                <p className="mb-4">
+                  El cáncer de cuello uterino presenta un impacto significativo en Corrientes:
+                </p>
+                
+                <ul className="list-disc pl-6 mb-6 space-y-2">
+                  <li>Entre 70-90 fallecimientos anuales por esta causa</li>
+                  <li>Tasa de mortalidad superior al promedio nacional</li>
+                  <li>Tendencia creciente preocupante si no se implementa un programa efectivo</li>
+                </ul>
+              </div>
+              
+              <div id="recomendaciones" className="mb-8">
+                <h3 className="text-2xl font-medium mb-4">Recomendaciones técnicas</h3>
+                
+                <div className="border border-border p-6 rounded-lg">
+                  <h4 className="text-lg font-medium mb-3">Estrategias para maximizar el acceso:</h4>
+                  
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong>Zonas urbanas:</strong> Integración con centros de salud existentes y hospitales de referencia
+                    </li>
+                    <li>
+                      <strong>Zonas rurales:</strong> Implementación de unidades móviles y sistema de autotoma
+                    </li>
+                    <li>
+                      <strong>Capacitación local:</strong> Alianza con universidades regionales para formación de personal
+                    </li>
+                    <li>
+                      <strong>Seguimiento:</strong> Sistema de información centralizado y notificaciones para asegurar el tratamiento oportuno
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            
+            {/* Conclusiones */}
+            <section id="conclusiones" className="mb-16 section-reveal">
+              <div className="flex justify-between items-center section-heading">
+                <h2>Conclusiones</h2>
+                <SectionPermalink sectionId="conclusiones" />
+              </div>
+              
+              <p className="mb-6 text-lg">
+                La implementación del programa de rastrillaje de VPH con kits DH-2 representa 
+                una oportunidad única para reducir significativamente la carga del cáncer de 
+                cuello uterino en Corrientes, aprovechando tecnología de vanguardia con 
+                relación costo-beneficio favorable.
+              </p>
+              
+              <div className="border-l-4 border-primary pl-6 my-8 py-2">
+                <p className="text-xl italic">
+                  "Un programa de prevención efectivo no es un gasto, sino una inversión en salud 
+                  pública que salva vidas, reduce sufrimiento y genera ahorros significativos 
+                  a largo plazo."
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+                <StatCard 
+                  title="Vidas salvadas"
+                  value="87+"
+                  description="Casos evitables anualmente"
+                  color="bg-primary/20"
+                />
+                <StatCard 
+                  title="Detección temprana"
+                  value="70%"
+                  description="De lesiones precancerosas"
+                  color="bg-primary/20"
+                />
+                <StatCard 
+                  title="Costo-efectividad"
+                  value="30%"
+                  description="Ahorro en tratamientos avanzados"
+                  color="bg-primary/20"
+                />
+              </div>
+              
+              <div className="flex justify-center mt-10">
+                <Button size="lg" className="gap-2">
+                  <Download className="h-5 w-5" />
+                  Descargar propuesta completa
+                </Button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      
+      <Footer />
+    </>
+  );
+};
+
+export default Index;
