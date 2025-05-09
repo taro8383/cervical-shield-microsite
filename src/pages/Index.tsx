@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -81,7 +80,7 @@ const Index = () => {
       title: 'Kits DH-2',
     },
     {
-      id: 'demografía',
+      id: 'demografia',
       title: 'Demografía y Acceso',
       subsections: [
         { id: 'analisis-demografico', title: 'Análisis demográfico' },
@@ -366,7 +365,7 @@ const Index = () => {
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                   <li>4,700 nuevos casos anuales en Argentina, con 2,500 muertes.</li>
                   <li>Tasa de mortalidad ajustada (2022): 7.5 muertes por cada 100,000 mujeres.</li>
-                  <li>Mayor riesgo en mujeres mayores: Picos en edades de 65-69 años y >75 años.</li>
+                  <li>Mayor riesgo en mujeres mayores: Picos en edades de 65-69 años y &gt;75 años.</li>
                 </ul>
                 
                 <h4 className="text-xl font-medium mb-2">Impacto desproporcionado en el noreste Argentino</h4>
@@ -553,7 +552,7 @@ const Index = () => {
               <div>
                 <h3 className="text-2xl font-medium mb-4">Impacto esperado en salud pública</h3>
                 
-                <div className="border border-border p-6 rounded-lg mb-6 bg-muted/30">
+                <div className="border border-border p-6 rounded-lg bg-muted/30">
                   <h4 className="text-lg font-medium mb-2">Proyecciones de impacto:</h4>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Reducción de casos de cáncer de cuello uterino avanzado y mortalidad en provincias objetivo.</li>
@@ -723,7 +722,7 @@ const Index = () => {
                       </tr>
                       <tr>
                         <td className="p-3 border">Especificidad</td>
-                        <td className="p-3 border">>99.9%</td>
+                        <td className="p-3 border">&gt;99.9%</td>
                         <td className="p-3 border">98%</td>
                         <td className="p-3 border">97%</td>
                         <td className="p-3 border">99%</td>
@@ -785,7 +784,7 @@ const Index = () => {
                     <h4 className="font-medium mb-2">Alta precisión</h4>
                     <p className="text-sm text-muted-foreground">
                       Uso de 14 sondas de ARN para evitar falsos negativos asociados a la falta 
-                      de la región L1 del VPH. Valor predictivo negativo > 99.9%.
+                      de la región L1 del VPH. Valor predictivo negativo &gt; 99.9%.
                     </p>
                   </div>
                   
@@ -800,10 +799,10 @@ const Index = () => {
             </section>
             
             {/* Demografía y Acceso */}
-            <section id="demografía" className="mb-16 section-reveal">
+            <section id="demografia" className="mb-16 section-reveal">
               <div className="flex justify-between items-center section-heading">
                 <h2>Demografía y Acceso a Salud</h2>
-                <SectionPermalink sectionId="demografía" />
+                <SectionPermalink sectionId="demografia" />
               </div>
               
               <div id="analisis-demografico" className="mb-8">

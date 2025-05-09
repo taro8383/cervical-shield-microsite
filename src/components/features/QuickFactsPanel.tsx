@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Circle, Progress } from 'lucide-react';
+import { Circle, Activity } from 'lucide-react';
 
 interface Fact {
   value: string;
@@ -18,7 +18,7 @@ export const QuickFactsPanel = ({ title, facts, className }: QuickFactsPanelProp
   const getRandomIcon = (index: number) => {
     const icons = [
       <Circle key="circle" className="h-4 w-4 text-primary fill-primary/40" />,
-      <Progress key="progress" className="h-4 w-4 text-primary" />
+      <Activity key="activity" className="h-4 w-4 text-primary" />
     ];
     
     return icons[index % icons.length];
