@@ -13,7 +13,15 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'docs',
-    emptyOutDir: true
+    emptyOutDir: true,
+    assetsInlineLimit: 8192,
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name]-[hash].js`,
+        chunkFileNames: `assets/[name]-[hash].js`,
+        assetFileNames: `assets/[name]-[hash].[ext]`
+      }
+    }
   },
   plugins: [
     react(),
