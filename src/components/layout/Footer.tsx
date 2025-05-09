@@ -18,8 +18,10 @@ export const Footer = () => {
       }
     } else {
       // Fallback for browsers that don't support Web Share API
+      // Check for email pattern in share function
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       navigator.clipboard.writeText(window.location.href);
-      alert('Enlace copiado al portapapeles');
+      alert('Enlace copiado al portapeles');
     }
   };
   
@@ -62,7 +64,6 @@ export const Footer = () => {
                   <Download className="h-4 w-4" />
                   <span>Descargar propuesta completa</span>
                 </Button>
-              </a>
               </a>
               <Button variant="outline" size="sm" className="justify-start gap-2 w-fit" onClick={handleShare}>
                 <Share2 className="h-4 w-4" />
