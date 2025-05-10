@@ -54,7 +54,7 @@ export const Footer = () => {
             <div className="font-medium">Recursos</div>
             <div className="flex flex-col gap-2">
               <a 
-                href="/assets/Propuesta ejecutiva_ Programa de rastrillaje de VPH con kits DH-2 para la provincia de Corrientes.pdf"
+                href="/assets/Propuesta-VPH-Corrientes.pdf"
                 download
                 className="no-underline"
                 target="_blank"

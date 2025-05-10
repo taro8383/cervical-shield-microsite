@@ -6,7 +6,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/cervical-shield-microsite/',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
   server: {
     host: "::",
     port: 8080,
@@ -17,9 +17,9 @@ export default defineConfig(({ mode }) => ({
     assetsInlineLimit: 8192,
     rollupOptions: {
       output: {
+        assetFileNames: `assets/[name]-[hash][extname]`,
         entryFileNames: `assets/[name]-[hash].js`,
-        chunkFileNames: `assets/[name]-[hash].js`,
-        assetFileNames: `assets/[name]-[hash].[ext]`
+        chunkFileNames: `assets/[name]-[hash].js`
       }
     }
   },
@@ -29,6 +29,10 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
     viteStaticCopy({
       targets: [
+        {
+          src: 'CNAME',
+          dest: './'
+        },
         {
           src: 'public/assets/*',
           dest: 'assets'
