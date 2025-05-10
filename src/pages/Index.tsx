@@ -298,7 +298,7 @@ const Index = () => {
                     />
                     <StatCard 
                       title="Precisión diagnóstica"
-                      value="99.9%"
+                      value="92%"
                       description="Especificidad de los kits DH-2"
                       icon={<ChartBar className="h-4 w-4" />}
                       color="bg-[#0e7587]"
@@ -332,7 +332,7 @@ const Index = () => {
                   <AccordionContent>
                     <p>Los kits DH-2 destacan por:</p>
                     <ul className="list-disc pl-6 mt-2 space-y-1">
-                      <li>Alta sensibilidad (98%) y especificidad (&gt;99.9%).</li>
+                      <li>Alta sensibilidad (92%) y especificidad (&gt;90%).</li>
                       <li>No requieren extracción ni amplificación de ADN, simplificando el proceso.</li>
                       <li>Adaptabilidad a entornos con infraestructura limitada.</li>
                     </ul>
@@ -546,7 +546,7 @@ const Index = () => {
                 
                 <p>
                   Los kits DH-2 de Hangzhou Dalton BioSciences, Ltd. ofrecen sensibilidad y especificidad comparables 
-                  a pruebas validadas, con un valor predictivo negativo superior al 99.9%.
+                  a pruebas validadas, con un valor predictivo negativo superior al 92%.
                 </p>
               </div>
               
