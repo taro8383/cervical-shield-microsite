@@ -163,7 +163,7 @@ const Index = () => {
       description: 'Muertes anuales por cáncer de cuello uterino en Argentina'
     },
     {
-      value: '98%',
+      value: '92',
       description: 'Sensibilidad de los kits DH-2 para detección de VPH de alto riesgo'
     },
     {
@@ -298,7 +298,7 @@ const Index = () => {
                     />
                     <StatCard 
                       title="Precisión diagnóstica"
-                      value="92%"
+                      value="90%"
                       description="Especificidad de los kits DH-2"
                       icon={<ChartBar className="h-4 w-4" />}
                       color="bg-[#0e7587]"
