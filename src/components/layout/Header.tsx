@@ -27,11 +27,17 @@ export const Header = () => {
     )}>
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img 
-            src="/assets/logo.png" 
-            alt="Bioproductos LATAM Logo" 
-            className="h-8 w-auto md:h-12 transition-transform duration-300 hover:scale-105"
-          />
+          <a 
+            href="https://www.bioproductos-latam.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <img 
+              src="/assets/logo.png" 
+              alt="Bioproductos LATAM Logo" 
+              className="h-8 w-auto md:h-12 transition-transform duration-300 hover:scale-105"
+            />
+          </a>
         </div>
         
         <a 
