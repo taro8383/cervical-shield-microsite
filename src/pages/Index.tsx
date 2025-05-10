@@ -716,17 +716,17 @@ const Index = () => {
                     <tbody className="divide-y divide-border">
                       <tr className="hover:bg-muted/50 transition-colors">
                         <td className="p-4">Sensibilidad</td>
-                        <td className="p-4 font-medium text-[#43B5A4]">98%</td>
-                        <td className="p-4">95%</td>
+                        <td className="p-4 font-medium text-[#43B5A4]">92%</td>
                         <td className="p-4">90%</td>
-                        <td className="p-4">92%</td>
+                        <td className="p-4">95.6%</td>
+                        <td className="p-4">93.6%</td>
                       </tr>
                       <tr className="hover:bg-muted/50 transition-colors">
                         <td className="p-4">Especificidad</td>
-                        <td className="p-4 font-medium text-[#43B5A4]">{">"}99.9%</td>
-                        <td className="p-4">98%</td>
-                        <td className="p-4">97%</td>
-                        <td className="p-4">99%</td>
+                        <td className="p-4 font-medium text-[#43B5A4]">90%</td>
+                        <td className="p-4">87%</td>
+                        <td className="p-4">92%</td>
+                        <td className="p-4">94.5%</td>
                       </tr>
                       <tr className="hover:bg-muted/50 transition-colors">
                         <td className="p-4">Costo</td>
