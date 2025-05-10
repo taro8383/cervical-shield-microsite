@@ -115,7 +115,7 @@ const Index = () => {
 
   const kitComparisonData = [
     { kit: 'DH-2 (Dalton)', sensibilidad: 92, especificidad: 90, costo: 15, facilidad: 95 },
-    { kit: 'PCR (Roche)', sensibilidad: 90, especificidad: 87 costo: 30, facilidad: 70 },
+    { kit: 'PCR (Roche)', sensibilidad: 90, especificidad: 87, costo: 30, facilidad: 70 },
     { kit: 'CMIA (Abbott)', sensibilidad: 95.6, especificidad: 92, costo: 25, facilidad: 75 },
     { kit: 'HC-2 (Qiagen)', sensibilidad: 93.6, especificidad: 94.5, costo: 28, facilidad: 65 },
   ];
